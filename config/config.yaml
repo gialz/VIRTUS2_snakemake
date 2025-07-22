@@ -1,0 +1,29 @@
+# VIRTUS v2.0 CreateIndex - Snakemake Configuration
+# Optional config file: config.yaml
+# You can override default values by creating this file
+
+#SRA
+sra_toolkit: "/share/apps/genomics/sratoolkit.3.0.2/bin/"
+
+# Genome URLs and file names
+url_virus: "https://raw.githubusercontent.com/yyoshiaki/VIRTUS2/master/data/viruses.fasta"
+output_name_virus: "virus.fasta"
+dir_name_star_virus: "STAR_index_virus"
+
+url_genomefasta_human: "ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_44/GRCh38.p14.genome.fa.gz"
+output_name_genomefasta_human: "human.fasta"
+dir_name_star_human: "STAR_index_human/"
+
+# Processing parameters
+threads: 8
+genomesa_nbases_virus: 12
+genomesa_nbases_human: 14
+
+# Singularity containers (optional override)
+containers:
+  star: "docker://quay.io/biocontainers/star:2.7.10a--h9ee0642_0"
+
+
+#in the config file:
+sample_metadata: "new_rimod_meta_data_4.csv"
+fastq_dir: "/SAN/vyplab/NYGC_ALSFTD/RIMOD_FTD/fastq/"
